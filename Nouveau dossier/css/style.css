@@ -1,0 +1,580 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f1f1;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+header {
+  background-color: #0CB3C2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img#logo-ics {
+  width: 60px;
+  margin: 24px;
+}
+
+p#titre {
+  text-align: center;
+  padding: 20px;
+}
+
+span#dwwm {
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+a#login {
+  text-decoration: none;
+  background-color: #B70CC9;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  color: #CC78D5;
+  padding-top: 40px;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+a#login:hover, a#login:focus {
+  background-color: #FFA20C;
+  color: #C17700;
+}
+
+section {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section#trombi{
+/*  background-color:yellow; */
+  position: relative;
+  text-align: center;
+  padding-top: 4px;
+
+}
+
+section#trombi a>img {
+  width: 12%;
+  min-width: 90px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  transition: filter .5s;
+}
+
+section#trombi a>img:hover, section#trombi a>img:active {
+  -webkit-filter: none;
+  filter: none;
+
+}
+
+footer {
+  background-color: #0CB3C2;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.1em;
+}
+
+
+
+
+/* TO CHECK */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create 12 equal columns that floats next to eachother */
+[class*="col-"] {
+  float:left;
+  width:100%;
+  height: 100%;
+}
+.col-1{width:10%;}
+.col-2{width:20%;}
+.col-3{width:30%;}
+.col-4{width:40%;}
+.col-5{width:50%;}
+.col-6{width:60%;}
+.col-7{width:70%;}
+.col-8{width:80%;}
+.col-9{width:90%;}
+.col-10{width:100%;}
+.col-11{width:91.66%;}
+.col-12{width:100%;}
+
+.col-thumb{width:5%;}
+
+/*
+ * Image trombi style
+ */
+img {
+  width: 100%;
+  height: 100%;
+}
+
+div[class*="thumb"] img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+div[class*="thumb"] img:hover,
+div[class*="thumb"] img.active {
+  -webkit-filter: none;
+  filter: none;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+div.modal-content div.mySlides>div:first-child {
+  background-color: #007bff;
+}
+div.modal-content div.mySlides div.col-4 p {
+  text-align: center;
+  padding: 16px;
+  color: white;
+}
+
+div.modal-content div.mySlides div.col-6 {
+   padding: 16px;
+   text-align: center;
+}
+
+div.modal-content div.mySlides div:first-child p:nth-child(3) {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+div.modal-content div.mySlides div:first-child p:nth-child(4) {
+  padding-bottom: 32px;
+  font-style: italic;
+  font-family: "Georgia";
+  line-height: 1.4;
+}
+
+div.modal-content div.mySlides div:first-child p:nth-child(4) span {
+  font-size: 8px;
+}
+
+div.modal-content div.mySlides div:first-child p:nth-child(3) span:nth-child(1) {
+  font-weight: 900;
+}
+
+div.modal-content div.mySlides div:first-child p:nth-child(3) span:nth-child(2) {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
+}
+
+div.modal-content>div:last-child {
+  background-color:black;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 60%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Citation */
+
+span.citation {
+  font-style: italic;
+  font-size: 1em;
+  font-family: Georgia, "Times New Roman", serif;
+  margin-top: 6px;
+  display:inline-block;
+    height: 40px;
+
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+/*
+ * Evaluate Block Style
+ */
+[id*="evalBlock"] {display: none;}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: solid 1px grey;
+}
+
+th {
+  font-size: 13px;
+  width: inherit;
+}
+
+td {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+[id*="evalBlock"] h1 {
+  padding-bottom: 6px;
+}
+
+
+
+/*
+ * Accordion
+ */
+
+ /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 6px;
+  margin-top: 6px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+form#evalForm button.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 72px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  text-align: right;
+}
+
+div.select {
+  padding: 2px 16px;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* five star rating */
+
+/* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+.rating-group {
+  display: inline-flex;
+  padding: 2px 16px;
+  font-size: 14px;
+}
+
+/* make hover effect work properly in IE */
+.rating__icon {
+  pointer-events: none;
+}
+
+/* hide radio inputs */
+.rating__input {
+ position: absolute !important;
+ left: -9999px !important;
+}
+
+/* set icon padding and size */
+.rating__label {
+  cursor: pointer;
+  /* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */
+/*  padding: 0 0.1em;
+*/  font-size: 0.8rem;
+}
+
+/* add padding and positioning to half star labels */
+.rating__label--half {
+  padding-right: 0;
+  margin-right: -0.6em;
+  z-index: 2;
+}
+
+/* set default star color */
+.rating__icon--star {
+  color: orange;
+}
+
+/* set color of none icon when unchecked */
+.rating__icon--none {
+  color: #eee;
+}
+
+/* if none icon is checked, make it red */
+.rating__input--none:checked + .rating__label .rating__icon--none {
+  color: red;
+}
+
+/* if any input is checked, make its following siblings grey */
+.rating__input:checked ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+
+/* make all stars orange on rating group hover */
+.rating-group:hover .rating__label .rating__icon--star,
+.rating-group:hover .rating__label--half .rating__icon--star {
+  color: orange;
+}
+
+/* make hovered input's following siblings grey on hover */
+.rating__input:hover ~ .rating__label .rating__icon--star,
+.rating__input:hover ~ .rating__label--half .rating__icon--star {
+  color: #ddd;
+}
+
+/* make none icon grey on rating group hover */
+.rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+   color: #eee;
+}
+
+/* make none icon red on hover */
+.rating__input--none:hover + .rating__label .rating__icon--none {
+  color: red;
+}
+
+/*Radio buttons meteo forecast*/
+
+.One{background-image:url(../images/icons/1-sun.png);}
+.Two{background-image:url(../images/icons/2-sun.png);}
+.Three{background-image:url(../images/icons/3-sun.png);}
+.Four{background-image:url(../images/icons/4-rain.png);}
+.Five{background-image:url(../images/icons/5-rain.png);}
+
+.cc-selector{
+  padding: 7px;
+  display:flex;
+  flex-direction: row;
+  height: 60px;
+}
+.forecast{
+    display: none;
+}
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:30%;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.2) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.2) grayscale(1) opacity(.7);
+            filter: brightness(1.2) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.0) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.0) grayscale(.5) opacity(.9);
+            filter: brightness(1.0) grayscale(.5) opacity(.9);
+}
+
+
+
+/*
+ * Form Style 
+ */
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+form button {
+  background-color: #bf00ff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+.btnGoEval{
+  display: inline-block;
+  margin:12px;
+  padding:3px;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color:white;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+.btnGoEval:hover {
+  border: solid 1px #007bff;
+  background-color: white;
+  color: #007bff;
+}
